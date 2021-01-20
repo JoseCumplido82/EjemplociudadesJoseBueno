@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:text="@string/siguiente"
+        android:onClick="enviarProvinciaActivity2"
         app:layout_constraintEnd_toEndOf="@+id/sp_actualizarp"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/sp_actualizarp"

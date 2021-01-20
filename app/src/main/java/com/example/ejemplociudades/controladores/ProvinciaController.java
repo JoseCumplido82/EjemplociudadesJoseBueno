@@ -4,6 +4,7 @@ import com.example.ejemplociudades.clases.Provincia;
 import com.example.ejemplociudades.tareas.TareaBorrarProvincia;
 import com.example.ejemplociudades.tareas.TareaInsertarProvincia;
 import com.example.ejemplociudades.tareas.TareaObtenerProvincias;
+import com.example.ejemplociudades.tareas.TareasActualizarProvincia;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -88,6 +89,32 @@ public class ProvinciaController {
         }
         finally {
             return borradoOK;
+        }
+    }
+
+    public static boolean actualizarProvincia(Provincia p) {
+        FutureTask t = new FutureTask(new TareasActualizarProvincia(p));
+        ExecutorService es = Executors.newSingleThreadExecutor();
+        es.submit(t);
+        boolean actualizadoOK = false;
+        try {
+            actualizadoOK = (boolean) t.get();
+            es.shutdown();
+            try {
+                if (!es.awaitTermination(800, TimeUnit.MILLISECONDS)) {
+                    es.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                es.shutdownNow();
+            }
+        } catch (
+                ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            return actualizadoOK;
         }
     }
 }

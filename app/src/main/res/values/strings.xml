@@ -7,4 +7,8 @@
     <string name="siguiente">Siguiente</string>
     <string name="borrar_provincia">Borrar Provincia</string>
     <string name="actualizar_provincia1">actualizar provincia</string>
+    <string name="actualizar_provincia2">ACTUALIZAR PROVINCIA</string>
+    <string name="id_provincia">ID PROVINCIA</string>
+    <string name="nombre_de_la_provincia">NOMBRE DE LA PROVINCIA</string>
+    <string name="actualizar_datos">actualizar datos</string>
 </resources>
