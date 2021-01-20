@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BorrarProvinciaActivity.class);
         startActivity(intent);
     }
+
+    public void actualizar_provincia1(View view) {
+       Intent intent = new Intent(this, ActualizarProvinciaActivity1.class);
+       startActivity(intent);
+    }
 }
